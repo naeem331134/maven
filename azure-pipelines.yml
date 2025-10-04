@@ -10,10 +10,11 @@ pool:
   vmImage: prodVM
 
 steps:
+
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: 'git clone https://github.com/naeem331134/maven.git'
+    script: 'git clone https://github.com/IntelliqDevops/maven.git'
 
 
 
