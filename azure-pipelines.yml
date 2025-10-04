@@ -8,6 +8,8 @@ trigger:
 
 pool:
   vmImage: prodVM
+
+steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
