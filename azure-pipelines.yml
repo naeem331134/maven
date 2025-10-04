@@ -13,31 +13,4 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: |
-      echo "Cloning Maven repo"
-      git clone https://github.com/IntelliqDevops/maven.git
-
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'cd /home/azureuser/myagent/_work/1/s/maven;mvn package'
-
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'scp /home/azureuser/myagent/_work/1/s/maven/webapp/target/webapp.war ubuntu@54.159.92.210:/var/lib/tomcat10/webapps/testapp.war'
-
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'git clone https://github.com/IntelliqDevops/FunctionalTesting.git'
-
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'java -jar /home/azureuser/myagent/_work/1/s/FunctionalTesting/testing.jar'
-
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'scp /home/azureuser/myagent/_work/1/s/maven/webapp/target/webapp.war ubuntu@54.173.252.36:/var/lib/tomcat10/webapps/prodapp.war'
+    script: 'git clone https://github.com/naeem331134/maven.git'
