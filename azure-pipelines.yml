@@ -25,3 +25,8 @@ steps:
     FROM tomee
     COPY webapp.war /usr/local/tomee/webapps/myapp.war
     EOF
+
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'docker build -t registery123.azurecr.io/app1 .'
