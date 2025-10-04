@@ -22,4 +22,7 @@ steps:
     targetType: 'inline'
     script: 'cd /home/azureuser/myagent/_work/1/s/maven;mvn package'
 
-
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'scp /home/azureuser/myagent/_work/1/s/maven/webapp/target/webapp.war ubuntu@54.159.92.210:/var/lib/tomcat10/webapps/testapp.war'
