@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: prodVM
+  vmImage: ubuntu:latest
 
 steps:
 
