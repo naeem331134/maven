@@ -19,3 +19,9 @@ steps:
   inputs:
     targetType: 'inline'
     script: 'cd /home/azureuser/myagent/_work/1/s/maven;mvn package'
+
+- script: |
+    cat << EOF > dockerfile
+    FROM tomee
+    COPY webapp.war /usr/local/tomee/webapps/myapp.war
+    EOF
