@@ -7,26 +7,10 @@ trigger:
 - master
 
 pool:
-  name: imran
+  name: 'agent1'
 
 steps:
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'git clone https://github.com/naeem331134/maven.git'
+- script: 'git clone https://github.com/IntelliqDevops/maven.git'
+displayName: 'Download'
 
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'cd /home/azureuser/myagent/_work/1/s/maven;mvn package'
 
-- script: |
-    cat << EOF > dockerfile
-    FROM tomee
-    COPY webapp.war /usr/local/tomee/webapps/myapp.war .
-    EOF
-
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'docker build -t registery123.azurecr.io/app1 .'
