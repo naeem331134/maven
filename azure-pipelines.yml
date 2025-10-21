@@ -21,3 +21,7 @@ steps:
     script: |
       rsync -avz -e "ssh -i /home/azureuser/.ssh/id_rsa" /home/azureuser/myagent/_work/1/s/webapp/target/webapp.war ubuntu@54.227.114.61:/tmp/
       ssh -i /home/azureuser/.ssh/id_rsa ubuntu@54.227.114.61 "sudo mv /tmp/webapp.war /var/lib/tomcat10/webapps/testapp.war && sudo chown tomcat:tomcat /var/lib/tomcat10/webapps/testapp.war && sudo systemctl restart tomcat10"
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'git clone https://github.com/IntelliqDevops/FunctionalTesting.git'
